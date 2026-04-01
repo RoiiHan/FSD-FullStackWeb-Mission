@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import "./style/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faStar, faArrowRightFromBracket, faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import Logo from "../assets/Logo.png"
-import Ellipse from "../assets/Ellipse 395.png"
+import Logo from "../../assets/Logo.png"
+import Ellipse from "../../assets/Ellipse 395.png"
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = React.useState(false);

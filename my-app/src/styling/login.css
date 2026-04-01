@@ -5,7 +5,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-body {
+.login {
   background-image: url(/public/Login-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;

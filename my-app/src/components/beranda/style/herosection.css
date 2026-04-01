@@ -1,0 +1,92 @@
+/* Hero Section Style */
+
+.hero-section {
+    background-image:
+    linear-gradient(to bottom,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.8) 70%
+      ), url(../../../assets/hero.png); 
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+}
+
+.fitur-herosection {
+    margin-top: auto;
+    margin-bottom: 70px;
+    margin-left: 30px;
+    color: white;
+}
+
+.fitur-herosection h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.fitur-herosection p {
+    width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.action-herosection {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.mulai {
+    padding: 12px 24px;
+    background-color: #0F1E93;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.selengkapnya {
+    background-color: #3A3541DE;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.selengkapnya i {
+    width: 20px;
+    height: 20px;
+}
+
+.usia {
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.volume {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.volume i {
+    color: white;
+}
+
+/* Hero Section Style End */

@@ -1,15 +1,14 @@
 import React from 'react'
 import "../styling/login.css"
 import { Link } from 'react-router-dom'
-
-import Logo from "../components/Logo"
-import InputField from "../components/InputField"
-import PasswordField from "../components/PasswordField"
-import GoogleButton from "../components/GoogleButton"
+import Logo from "../components/login/logo"
+import InputField from "../components/login/InputField"
+import PasswordField from "../components/login/PasswordField"
+import GoogleButton from "../components/login/GoogleButton"
 
 function Login() {
   return (
-    <section>
+    <section className='login'>
       <div className="login-box">
         <div className="login-box-desc">
 
