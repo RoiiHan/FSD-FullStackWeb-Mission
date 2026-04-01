@@ -1,0 +1,118 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.homepage {
+    background-color: #161612;
+    color: white;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.container-text {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 40px;
+}
+
+.container-text p {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.container-gambar {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .container-text {
+    width: 100%;
+    text-align: justify;
+    padding: 30px;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .container-text p {
+    font-size: 2.5rem;
+  }
+
+  .container-gambar {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .container-gambar img {
+    width: 80%;
+    height: auto;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+
+  .container {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+
+  .container-text {
+    width: 100%;
+    padding: 20px;
+    text-align: justify;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .container-text p {
+    font-size: 2rem;
+  }
+
+  .container-gambar {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .container-gambar img {
+    width: 90%;
+    height: auto;
+  }
+
+}
+
+
+/* ================= MOBILE KECIL ================= */
+@media (max-width: 400px) {
+
+  .container-text p {
+    font-size: 1.7rem;
+  }
+
+}
