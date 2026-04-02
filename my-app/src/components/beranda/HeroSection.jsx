@@ -7,7 +7,12 @@ import {faCircleInfo, faVolumeXmark, } from '@fortawesome/free-solid-svg-icons';
   const HeroSection = (props) => {
   const {title, deskripsi, rating, gambar,id} = props;
   return (
-    <div className='hero-section'> 
+    <div className='hero-section' style={{
+        backgroundImage: `linear-gradient(to bottom, 
+          rgba(0, 0, 0, 0) 20%, 
+          rgba(0, 0, 0, 0.8) 70%
+        ), url(${gambar})`   // ← gambar dari API
+      }}> 
     <div className="fitur-herosection">
       <h1>{title}</h1>
       <p>{deskripsi}</p>

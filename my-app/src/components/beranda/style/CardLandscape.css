@@ -1,0 +1,67 @@
+.CardLandscape {
+    padding: 20px;
+    color: white;
+}
+
+.CardLandscape h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 10px 10px;
+}
+
+.Card {
+  min-width: calc(25% - 12px); /* ← 4 card per baris */
+  height: 200px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.crousel{
+    position: relative;
+}
+
+.crousel-track {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: white;
+}
+
+.content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.before, .after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.before { left: 0; }
+.after  { right: 0; }
