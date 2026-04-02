@@ -1,0 +1,23 @@
+.ButtonCrouselLeft,
+.ButtonCrouselRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.ButtonCrouselLeft {
+    left: 10px;
+}
+
+.ButtonCrouselRight {
+    right: 10px;
+}
