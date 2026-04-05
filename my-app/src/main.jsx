@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import HomePage from './pages/HomePage'
 import Beranda from './pages/Beranda';
+import TambahFilm from './components/beranda/TambahFilm';
 
 const rootElement = document.getElementById("root");
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path : "/Beranda",
     Component : Beranda
+  },
+  {
+    path : "/TambahFilm",
+    Component : TambahFilm
   }
 
 ])

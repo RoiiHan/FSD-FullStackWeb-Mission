@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./style/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faStar, faArrowRightFromBracket, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faStar, faArrowRightFromBracket, faArrowDown, faPlusMinus } from '@fortawesome/free-solid-svg-icons';
 import Logo from "../../assets/Logo.png"
 import Ellipse from "../../assets/Ellipse 395.png"
+import TambahFilm from './TambahFilm';
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -35,6 +36,7 @@ function Navbar() {
                         <Link to="/profil"><li><FontAwesomeIcon icon={faUser} style={{color: "rgb(255, 255, 255)",}} /> Profil Saya</li></Link>
                         <Link to="/ubah-premium"><li><FontAwesomeIcon icon={faStar} style={{color: "rgb(255, 255, 255)",}} /> Ubah Premium</li></Link>
                         <Link to="/login"><li><FontAwesomeIcon icon={faArrowRightFromBracket} style={{color: "rgb(255, 255, 255)",}} /> Keluar</li></Link>
+                        <Link to="/TambahFilm"><li><FontAwesomeIcon icon={faPlusMinus} style={{color: "rgb(255, 255, 255)",}} /> Tambah Film</li></Link>
                     </ul>
                 </div>
             )}
