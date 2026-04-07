@@ -12,7 +12,6 @@
 }
 
 .fitur-herosection {
-    /* hapus margin-top: auto */
     margin-bottom: 70px;
     margin-left: 30px;
     color: white;
@@ -82,7 +81,7 @@
     margin-right: 30px;
 }
 
-.volume i {
+.detail-volume{
     color: white;
 }
 

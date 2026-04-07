@@ -1,0 +1,7 @@
+Link API Card Landscape :
+-- https://69cd706cddc3cabb7bd2c0e1.mockapi.io/Chill
+-- https://69cd706cddc3cabb7bd2c0e1.mockapi.io/Chill/id
+
+Link Api Card Potrait :
+-- https://69cd706cddc3cabb7bd2c0e1.mockapi.io/potrait
+-- https://69cd706cddc3cabb7bd2c0e1.mockapi.io/potrait/id

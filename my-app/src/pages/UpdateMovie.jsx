@@ -1,9 +1,12 @@
-import React, { useReducer, useState } from 'react'
-import InputField from "./InputFieldBeranda"
-import "./style/TambahFilm.css"
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import Navbar from "./navbar"
+import React from 'react'
+import { useState,useEffect,useReducer } from 'react';
+import { useParams } from 'react-router-dom';
+import Navbar from '../components/beranda/navbar';  
+import axios from 'axios';
+import '../styling/UpdateMovie.css';
+import { useNavigate } from 'react-router-dom';
+import InputField from '../components/beranda/InputFieldBeranda';
+
 
 const defaultFrom = {
 	title: "",
@@ -45,43 +48,56 @@ const action = (state, action) => {
                 usia : action.value
             }
         }
+		case "change_all" : {
+			return {
+				...action.value,
+			}
+		}
         default: {
             return state;
         }
     }    
 }
 
-function TambahFilm() { 
-    const [loading, setLoading] = useState(false);
-    const [data,setData] = useReducer(action,defaultFrom);
-    const navigate = useNavigate();
-    const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
-    const createMenu = async (data) => {
-        await axios.post(`${BASE_URL}/potrait`, data)
-        .then(() => {
-            console.log("Data Sukses")
-            navigate("/beranda")
-        }).catch(() => {
-            console.log("Data Created Failed")
-        }).finally(() => {
-            setLoading(false)
-        })
-    } 
+function MenuUpdate() {
+    const [loading , setLoading] = useState(false);
+		const [data,setData] = useReducer(action, defaultFrom);
+		const navigate = useNavigate();
+		const params = useParams();
+        const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (!data.title || !data.deskripsi || !data.rating || !data.gambar) {
-        alert("Semua field harus diisi!")
-        return; // ← stop, tidak jadi kirim ke API
-    }
-        setLoading(true);
-        createMenu(data);
-        console.log("data =>", data)
-    }
-  return ( 
-      <div className='Film'>
-          <Navbar />
-        <h1>Tambah Film Anda</h1>
+		const updateMenu = async (data) => {
+			await axios.put(`${BASE_URL}/potrait/${params.id}`, data).then(() => {
+				console.log("Data Updated Success")
+				navigate("/beranda");
+			}).catch(()=> {
+				console.log("Data Updated Failed")
+			}).finally(() => {
+				setLoading(false);
+			})
+		}
+
+		const handleSubmit = (event) => {
+			event.preventDefault();
+			setLoading(true);
+			updateMenu(data);
+			// console.log("data =>", data)
+		}
+	
+	useEffect(() => {
+			axios.get(`${BASE_URL}/potrait/${params.id}`).then((response) => {
+				// console.log("response =>", response.data);
+				setData ({
+					type : "change_all",
+					value : response.data,
+				})
+			})
+		}, []);
+
+  return (
+    <div className="update-movie">
+        <Navbar />
+		<h1>Tambah Film Anda</h1>
         <form className="Tambahfilm-form" onSubmit={handleSubmit}>
             <InputField 
                 label="Input Title Film :  "
@@ -147,8 +163,8 @@ function TambahFilm() {
                     {loading ? "Loading..." : "Simpan"}
                 </button>
         </form>
-    </div>
+    </div>   
   )
 }
 
-export default TambahFilm
+export default MenuUpdate

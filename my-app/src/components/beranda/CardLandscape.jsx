@@ -1,10 +1,22 @@
 import React from 'react'
-import ButtonCrouselLeft from './ButtonCrouselLeft'
-import ButtonCrouselRight from './ButtonCrouselRight'
 import { useRef } from 'react'
 import "./style/CardLandscape.css"
+import { useState,useEffect } from 'react'
+import axios from 'axios'
 
-function CardLandscape({data}) {
+function CardLandscape() {
+    const [data, setData]  = useState([]);
+    const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
+    useEffect(() => {
+      axios.get(`${BASE_URL}/Chill`).then((response) => {
+        setData(response.data)
+        console.log(response.data)
+      }).catch((error) => {
+        setError(true)
+        console.log(error)
+      })
+    }, [])
+    
     const trackRef = useRef(null)
     const scrollLeft = () => {
         trackRef.current.scrollBy({left : -800, behavior:'smooth'})
@@ -14,7 +26,6 @@ function CardLandscape({data}) {
     }
   return (
     <div className='CardLandscape'>
-        <h1>Melanjutkan Tonton Film</h1>
         <div className='crousel'>
             <button className="before" onClick={scrollLeft}>&lt;</button>
             
@@ -24,15 +35,18 @@ function CardLandscape({data}) {
                         className="Card"
                         key={item.id}
                         style={{
-                        backgroundImage: `url(${item.gambar})`}}>
+                        backgroundImage: `linear-gradient(to bottom, 
+                        rgba(0, 0, 0, 0) 20%, 
+                        rgba(0, 0, 0, 0.8) 70%
+                        ),url(${item.gambar})`}}>
                         <div className="content">
                             <p>{item.title}</p>
                             <p>{item.rating}</p>
                         </div>
                     </div>
                 ))}
-                <button className="after" onClick={scrollRight}>&gt;</button>
             </div>
+                <button className="after" onClick={scrollRight}>&gt;</button>
         </div>
     </div>
   )

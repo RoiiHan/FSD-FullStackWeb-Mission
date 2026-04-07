@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import "./style/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faStar, faArrowRightFromBracket, faArrowDown, faPlusMinus } from '@fortawesome/free-solid-svg-icons';
-import Logo from "../../assets/Logo.png"
+import Logo from "../../assets/Vector.png"
 import Ellipse from "../../assets/Ellipse 395.png"
 import TambahFilm from './TambahFilm';
 
@@ -17,6 +17,7 @@ function Navbar() {
     <nav>
         <div className="logo">
             <img src={Logo} alt="logo" />
+            <p>CHILL</p>
         </div>
         <ul>
             <Link to="/beranda">Series</Link>

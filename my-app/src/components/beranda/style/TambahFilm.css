@@ -4,21 +4,20 @@
     height: 100vh;
     color: white;
 }
+h1 {
+    margin-top: 10px;
+}
 
-form {
+.Tambahfilm-form {
     width: 30%;
     height: auto;
 }
 
 .InputField {
-    padding: 15px;
+    padding: 10px;
 }
 
-input {
-    border: 1px solid white;
-}
-
-button {
+.button-tambahfilm {
     margin: 10px 0 0 100px;
     width: 100px;
     border-radius: 10px;

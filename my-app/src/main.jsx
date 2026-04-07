@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import HomePage from './pages/HomePage'
 import Beranda from './pages/Beranda';
 import TambahFilm from './components/beranda/TambahFilm';
+import UpdateMovie from './pages/UpdateMovie';  
 
 const rootElement = document.getElementById("root");
 
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
   {
     path : "/TambahFilm",
     Component : TambahFilm
+  }
+  ,
+  {
+    path : "/UpdateMovie/:id",
+    Component : UpdateMovie
   }
 
 ])

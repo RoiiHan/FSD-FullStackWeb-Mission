@@ -1,0 +1,75 @@
+.footer {
+  border-top: 1px solid #2e2e2e;
+  background: #18181d;
+  color: white;
+  padding: 30px 40px;
+}
+
+.footer-container {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-brand img {
+  width: 50px;
+  height: 44px;
+  margin-top: 15px;
+  background-size: cover;
+}
+
+.footer-brand-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-brand-logo h1 {
+    font-family: "Londrina Solid",sans-serif;
+    font-size: 50px;
+    margin-left: 5px;
+}
+
+.footer-brand p {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.footer-content {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.arrow {
+  display: none;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 40px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.bantuan ul li {
+  margin-bottom: 8px;
+}
