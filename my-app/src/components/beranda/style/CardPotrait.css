@@ -71,7 +71,7 @@
 }
 
 .Card-potrait {
-  min-width: calc(33.33% - 12px); /* ← 4 card per baris */
+  min-width: calc(30% - 12px); /* ← 4 card per baris */
   height: 200px;
 }
 
