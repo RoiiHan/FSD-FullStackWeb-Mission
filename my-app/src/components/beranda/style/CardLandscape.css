@@ -3,13 +3,6 @@
     color: white;
 }
 
-.CardLandscape h1 {
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    margin: 10px 0 10px 10px;
-}
-
 .Card {
   min-width: calc(25% - 12px); /* ← 4 card per baris */
   height: 200px;
@@ -19,6 +12,7 @@
   background-position: center;
   flex-shrink: 0;
   position: relative;
+  scroll-snap-align: start;
 }
 
 .crousel{
@@ -30,6 +24,7 @@
     flex-direction: row;
     gap: 16px;
     overflow-x: hidden;
+    scroll-snap-type: x mandatory;
 }
 
 .content {
@@ -65,3 +60,31 @@
 
 .before { left: 0; }
 .after  { right: 0; }
+
+@media (max-width: 576px) {
+
+.Card {
+  min-width: calc(90% - 10px); /* ← 4 card per baris */
+  height: 200px;
+} 
+
+.crousel{
+    position: relative;
+}
+
+}
+/* ===== TABLET (577px - 768px) ===== */
+@media (min-width: 577px) and (max-width: 768px) {
+
+.Card {
+  min-width: calc(50% - 12px); /* ← 4 card per baris */
+}
+}
+
+/* ===== DESKTOP (min 769px) ===== */
+@media (min-width: 769px) and (max-width: 999px){
+.Card {
+  min-width: calc(33.33% - 12px); /* ← 4 card per baris */
+}
+  
+}

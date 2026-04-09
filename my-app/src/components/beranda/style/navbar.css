@@ -91,3 +91,73 @@ nav ul li a {
     color: white;
     cursor: pointer;
 }
+
+/* ===== MOBILE (max 576px) ===== */
+@media (max-width: 576px) {
+
+.logo {
+    padding: 2px;
+}
+
+.logo img{
+    margin: 0px;
+    width: 25px;
+    height: 20px;
+}
+
+.logo p{
+    font-size: 20px;
+    padding: 0 5px;
+}
+nav ul {
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.nav-link {
+    padding: 5px;
+    font-size: 12px;
+}
+
+.profil {
+    margin-right: 10px;
+}
+
+.toogle {
+    margin-right: 0px;
+}
+
+}
+
+/* ===== TABLET (577px - 768px) ===== */
+@media (min-width: 577px) and (max-width: 768px) {
+
+.logo {
+    padding: 0px;
+}
+
+.logo img{
+    margin: 0px;
+    width: 25px;
+    height: 21px;
+}
+
+.logo p{
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+nav ul li a {
+    padding: 12px;
+}
+
+.profil {
+    margin-right: 10px;
+}
+
+}
+
+/* ===== DESKTOP (min 769px) ===== */
+@media (min-width: 769px) {
+
+}

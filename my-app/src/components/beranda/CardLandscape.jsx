@@ -19,10 +19,12 @@ function CardLandscape() {
     
     const trackRef = useRef(null)
     const scrollLeft = () => {
-        trackRef.current.scrollBy({left : -800, behavior:'smooth'})
+        const cardWidth = trackRef.current.firstChild?.offsetWidth || 300;
+        trackRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' })
     }
     const scrollRight = () => {
-        trackRef.current.scrollBy({left :   800, behavior:'smooth'})
+         const cardWidth = trackRef.current.firstChild?.offsetWidth || 300;
+    trackRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' })
     }
   return (
     <div className='CardLandscape'>

@@ -5,7 +5,7 @@
 
 .Card-potrait {
   min-width: calc(20% - 12px); /* ← 4 card per baris */
-  height: 400px;
+  height: 300px;
   border-radius: 10px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,11 +36,6 @@
     color: white;
 }
 
-.content-landscpae p {
-  margin: 0;
-  font-size: 14px;
-}
-
 .before, .after {
   position: absolute;
   top: 50%;
@@ -68,3 +63,39 @@
 
 .before { left: 0; }
 .after  { right: 0; }
+
+@media (max-width: 576px) {
+  
+.CardPotrait {
+  padding: 0px 20px 0px 20px;
+}
+
+.Card-potrait {
+  min-width: calc(33.33% - 12px); /* ← 4 card per baris */
+  height: 200px;
+}
+
+}
+/* ===== TABLET (577px - 768px) ===== */
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .CardPotrait {
+    padding: 20px;
+}
+
+.Card-potrait {
+  min-width: calc(25% - 12px); /* ← 4 card per baris */
+  height: 200px;
+}
+
+.crousel-track-potrait {
+    gap: 12px;
+}
+
+}
+
+/* ===== DESKTOP (min 769px) ===== */
+@media (min-width: 769px) {
+
+  
+}

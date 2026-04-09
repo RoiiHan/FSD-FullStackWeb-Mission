@@ -18,14 +18,15 @@
 }
 
 .footer-brand-logo {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .footer-brand-logo h1 {
-    font-family: "Londrina Solid",sans-serif;
-    font-size: 50px;
-    margin-left: 5px;
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 50px;
+  margin-left: 5px;
 }
 
 .footer-brand p {
@@ -47,10 +48,26 @@
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  cursor: default;
 }
 
 .arrow {
   display: none;
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
 }
 
 .footer-grid {
@@ -62,6 +79,7 @@
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section li {
@@ -70,6 +88,101 @@
   margin-bottom: 8px;
 }
 
-.bantuan ul li {
-  margin-bottom: 8px;
+.bantuan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== MOBILE (max 576px) ===== */
+@media (max-width: 576px) {
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-title {
+    cursor: pointer;
+    border-bottom: 1px solid #2e2e2e;
+    padding: 15px 0;
+    margin-bottom: 0;
+  }
+
+  .arrow {
+    display: inline-block;
+  }
+
+  .footer-grid {
+    display: none;
+    padding: 10px 0;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+  }
+
+  .footer-grid.show {
+    display: grid;
+  }
+
+  .bantuan-list {
+    display: none;
+    padding: 10px 0;
+  }
+
+  .bantuan-list.show {
+    display: block;
+  }
+}
+
+/* ===== TABLET (577px - 768px) ===== */
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+/* ===== DESKTOP (min 769px) ===== */
+@media (min-width: 769px) {
+
+  .footer-container {
+    flex-direction: row;
+    gap: 80px;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    gap: 80px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 40px;
+  }
+
+  .arrow {
+    display: none;
+  }
 }

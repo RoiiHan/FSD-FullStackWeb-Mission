@@ -20,9 +20,9 @@ function Navbar() {
             <p>CHILL</p>
         </div>
         <ul>
-            <Link to="/beranda">Series</Link>
-            <Link to="/tentang">Film</Link>
-            <Link to="/kontak">Daftar Saya</Link>
+            <Link to="/beranda" className='nav-link'>Series</Link>
+            <Link to="/tentang" className='nav-link'>Film</Link>
+            <Link to="/kontak" className='nav-link'>Daftar Saya</Link>
         </ul>
 
         <div className="profil">
