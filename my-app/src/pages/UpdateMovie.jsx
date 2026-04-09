@@ -97,7 +97,7 @@ function MenuUpdate() {
   return (
     <div className="update-movie">
         <Navbar />
-		<h1>Tambah Film Anda</h1>
+		<h1>Update Film </h1>
         <form className="Tambahfilm-form" onSubmit={handleSubmit}>
             <InputField 
                 label="Input Title Film :  "

@@ -81,7 +81,7 @@ function TambahFilm() {
   return ( 
       <div className='Film'>
           <Navbar />
-        <h1>Tambah Film Anda</h1>
+        <h1 className='header-tambah-film'>Tambah Film Anda</h1>
         <form className="Tambahfilm-form" onSubmit={handleSubmit}>
             <InputField 
                 label="Input Title Film :  "
