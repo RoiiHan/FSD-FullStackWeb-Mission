@@ -5,11 +5,10 @@
   font-family: 'Lato', sans-serif;
 }
 
-body {
+.login {
   background-image: url(/public/Login-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
 section {
@@ -30,6 +29,7 @@ section {
 .judul {
   font-weight: bold;
   font-size: 2rem;
+  font-family: "Londrina Solid" , sans-serif;
 }
 
 .logo-login {

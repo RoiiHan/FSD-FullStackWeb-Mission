@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -7,48 +6,73 @@
 }
 
 .homepage {
-    background-color: #161612;
-    color: white;
+  background-color: #161612;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;  /* ✅ Navbar di atas, container di bawah */
 }
 
 .container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;                 /* ✅ Isi sisa tinggi layar */
+  width: 100%;
+  overflow: hidden;
 }
 
 .container-text {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding: 40px;
 }
 
-.container-text p {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    margin-top: 20px;
+.header {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.deskripsi p {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  color: white;
+}
+
+.deskripsi {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #cbd5e1;
 }
 
 .container-gambar {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    margin-top: 80px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
 }
+
+.container-gambar img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
 /* ================= TABLET ================= */
 @media (max-width: 992px) {
-
   .container {
     flex-direction: column;
-    height: auto;
+    overflow: visible;
   }
 
   .container-text {
     width: 100%;
-    text-align: justify;
     padding: 30px;
   }
 
@@ -56,63 +80,70 @@
     text-align: center;
   }
 
-  .container-text p {
+  .deskripsi p {
     font-size: 2.5rem;
   }
 
   .container-gambar {
     width: 100%;
-    margin-top: 40px;
+    padding: 20px;
   }
 
   .container-gambar img {
-    width: 80%;
-    height: auto;
+    width: 70%;
+    max-height: 45vh;
   }
-
 }
-
 
 /* ================= MOBILE ================= */
 @media (max-width: 576px) {
-
   .container {
     flex-direction: column;
-    padding-top: 40px;
+    overflow: visible;
   }
 
   .container-text {
     width: 100%;
     padding: 20px;
-    text-align: justify;
   }
 
   .header {
     text-align: center;
+    font-size: 1rem;
   }
 
-  .container-text p {
+  .deskripsi p {
     font-size: 2rem;
+  }
+
+  .deskripsi {
+    font-size: 0.9rem;
+  }
+
+  /* ✅ Gambar muncul di atas teks di mobile */
+  .container {
+    flex-direction: column-reverse;
   }
 
   .container-gambar {
     width: 100%;
-    margin-top: 20px;
+    padding: 20px 20px 0 20px;
+  }
+
+  .container-gambar img {
+    width: 85%;
+    max-height: 35vh;
+  }
+}
+
+/* ================= MOBILE KECIL ================= */
+@media (max-width: 400px) {
+  .deskripsi p {
+    font-size: 1.7rem;
   }
 
   .container-gambar img {
     width: 90%;
-    height: auto;
+    max-height: 30vh;
   }
-
-}
-
-
-/* ================= MOBILE KECIL ================= */
-@media (max-width: 400px) {
-
-  .container-text p {
-    font-size: 1.7rem;
-  }
-
 }
