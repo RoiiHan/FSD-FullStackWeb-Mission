@@ -1,0 +1,101 @@
+.CardPotrait {
+    padding: 20px;
+    color: white;
+}
+
+.Card-potrait {
+  min-width: calc(20% - 12px); /* ← 4 card per baris */
+  height: 300px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.crousel-potrait{
+    position: relative;
+}
+
+.crousel-track-potrait {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: hidden;
+}
+
+.content-potrait {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: white;
+}
+
+.before, .after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.trash {
+  background: none;
+  color: red;
+  cursor: pointer;
+}
+
+.Detail {
+  cursor: pointer;
+}
+
+.before { left: 0; }
+.after  { right: 0; }
+
+@media (max-width: 576px) {
+  
+.CardPotrait {
+  padding: 0px 20px 0px 20px;
+}
+
+.Card-potrait {
+  min-width: calc(30% - 12px); /* ← 4 card per baris */
+  height: 200px;
+}
+
+}
+/* ===== TABLET (577px - 768px) ===== */
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .CardPotrait {
+    padding: 20px;
+}
+
+.Card-potrait {
+  min-width: calc(25% - 12px); /* ← 4 card per baris */
+  height: 200px;
+}
+
+.crousel-track-potrait {
+    gap: 12px;
+}
+
+}
+
+/* ===== DESKTOP (min 769px) ===== */
+@media (min-width: 769px) {
+
+  
+}

@@ -1,0 +1,83 @@
+.Film {
+    background-color: #181A1C;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+}
+
+.header-tambah-film {
+    margin-top: 10px;
+}
+
+.Tambahfilm-form {
+    width: 30%;
+    height: auto;
+    padding-left: 20px;
+}
+
+.InputField {
+    padding: 10px;
+}
+
+.button-tambahfilm {
+    margin: 10px 0 0 100px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: aliceblue;
+    color: black;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+    .Tambahfilm-form {
+        width: 60%;
+        padding: 0 20px;
+    }
+
+    .button-tambahfilm {
+        margin: 10px 0 0 50px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+    .header-tambah-film {
+        font-size: 1.5rem;
+        margin-top: 15px;
+    }
+
+    .Tambahfilm-form {
+        width: 100%;       /* ✅ Full width di mobile */
+        padding: 0 15px;
+    }
+
+    .InputField {
+        padding: 8px 0;
+    }
+
+    .button-tambahfilm {
+        width: 100%;       /* ✅ Full width */
+        margin: 15px 0 20px 0;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+}
+
+/* ================= MOBILE KECIL ================= */
+@media (max-width: 400px) {
+    .header-tambah-film {
+        font-size: 1.3rem;
+    }
+
+    .InputField {
+        padding: 6px 0;
+    }
+
+    .button-tambahfilm {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
