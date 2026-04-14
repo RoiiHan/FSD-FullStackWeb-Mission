@@ -2,8 +2,10 @@ import React, { useReducer, useState } from 'react'
 import InputField from "./InputFieldBeranda"
 import "./style/TambahFilm.css"
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { addPotraitApi } from '../../service/API/filmApi'
 import Navbar from "./navbar"
+import { useDispatch, useSelector } from "react-redux";
+import { addPotrait } from "../../store/redux/dataslice";
 
 const defaultFrom = {
 	title: "",
@@ -52,27 +54,29 @@ const action = (state, action) => {
 }
 
 function TambahFilm() { 
+    const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [data,setData] = useReducer(action,defaultFrom);
     const navigate = useNavigate();
-    const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
+
     const createMenu = async (data) => {
-        await axios.post(`${BASE_URL}/potrait`, data)
-        .then(() => {
-            console.log("Data Sukses")
-            navigate("/beranda")
-        }).catch(() => {
-            console.log("Data Created Failed")
-        }).finally(() => {
-            setLoading(false)
-        })
+            try {
+                const result = await addPotraitApi(data);
+                dispatch(addPotrait(result));
+                setLoading(false);
+                navigate("/beranda");
+            }catch (error) {
+                console.log(error);
+            }finally {
+                setLoading(false);
+            }
     } 
 
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!data.title || !data.deskripsi || !data.rating || !data.gambar) {
         alert("Semua field harus diisi!")
-        return; // ← stop, tidak jadi kirim ke API
+        return; 
     }
         setLoading(true);
         createMenu(data);

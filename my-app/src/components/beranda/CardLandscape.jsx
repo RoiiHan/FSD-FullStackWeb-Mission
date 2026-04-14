@@ -2,19 +2,25 @@ import React from 'react'
 import { useRef } from 'react'
 import "./style/CardLandscape.css"
 import { useState,useEffect } from 'react'
-import axios from 'axios'
+import { getLandscape } from '../../service/API/filmApi'
+import { useDispatch, useSelector } from "react-redux";
+import { setLandscape } from "../../store/redux/dataslice";
 
 function CardLandscape() {
-    const [data, setData]  = useState([]);
-    const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
+    const dispatch = useDispatch();
+    const data = useSelector((state) => state.data.landscape);
+
     useEffect(() => {
-      axios.get(`${BASE_URL}/Chill`).then((response) => {
-        setData(response.data)
-        console.log(response.data)
-      }).catch((error) => {
-        setError(true)
-        console.log(error)
-      })
+      const fetchData = async () => {
+        try {
+        const result = await getLandscape();
+        const dataFix = Array.isArray(result) ? result : [];
+        dispatch(setLandscape(dataFix));
+      } catch (error) {
+        console.log(error);
+      }
+      };
+      fetchData();
     }, [])
     
     const trackRef = useRef(null)

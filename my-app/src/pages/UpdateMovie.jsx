@@ -2,11 +2,12 @@ import React from 'react'
 import { useState,useEffect,useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/beranda/navbar';  
-import axios from 'axios';
+import { getPotraitById, updatePotraitApi } from "../service/API/filmApi";
 import '../styling/UpdateMovie.css';
 import { useNavigate } from 'react-router-dom';
 import InputField from '../components/beranda/InputFieldBeranda';
-
+import { useDispatch } from "react-redux";
+import { updatePotrait } from "../store/redux/dataslice";
 
 const defaultFrom = {
 	title: "",
@@ -61,21 +62,22 @@ const action = (state, action) => {
 
 function MenuUpdate() {
     const [loading , setLoading] = useState(false);
+    const dispatch = useDispatch();
 		const [data,setData] = useReducer(action, defaultFrom);
 		const navigate = useNavigate();
 		const params = useParams();
-        const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
 
 		const updateMenu = async (data) => {
-			await axios.put(`${BASE_URL}/potrait/${params.id}`, data).then(() => {
-				console.log("Data Updated Success")
-				navigate("/beranda");
-			}).catch(()=> {
-				console.log("Data Updated Failed")
-			}).finally(() => {
-				setLoading(false);
-			})
-		}
+        try {
+            const result = await updatePotraitApi(params.id, data);
+            dispatch(updatePotrait(result));
+            navigate("/beranda");
+        } catch (error) {
+            console.log("Data Updated Failed");
+        } finally {
+            setLoading(false);
+        }
+        };
 
 		const handleSubmit = (event) => {
 			event.preventDefault();
@@ -85,13 +87,14 @@ function MenuUpdate() {
 		}
 	
 	useEffect(() => {
-			axios.get(`${BASE_URL}/potrait/${params.id}`).then((response) => {
-				// console.log("response =>", response.data);
-				setData ({
-					type : "change_all",
-					value : response.data,
-				})
-			})
+        const fetchData = async () => {
+        const result = await getPotraitById(params.id);
+        setData({
+            type: "change_all",
+            value: result,
+        });
+        };
+        fetchData();
 		}, []);
 
   return (

@@ -2,26 +2,33 @@ import React from 'react'
 import { useRef } from 'react'
 import "./style/CardPotrait.css"
 import { useState,useEffect } from 'react'
-import axios from 'axios'
+import { getPotrait,deletePotraitApi } from '../../service/API/filmApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCircleInfo, faMagnifyingGlass, faTrash, faVolumeXmark } from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { setPotrait, deletePotrait } from "../../store/redux/dataslice";
+
 
 function CardPotrait() {
-    const [data, setData]  = useState([]);
+    const dispatch = useDispatch();
+    const data = useSelector((state) => state.data.potrait);
     const [loading, setLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
     const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
 
     useEffect(() => {
-      axios.get(`${BASE_URL}/potrait`).then((response) => {
-        setData(response.data)
-        console.log(response.data)
-      }).catch((error) => {
-        setError(true)
-        console.log(error)
-      })
+      const fetchData = async () => {
+        try {
+            const result = await getPotrait();
+            dispatch(setPotrait(result));
+            setLoading(false);
+        }catch (error) {
+            setIsError(true);
+            setLoading(false);
+        }
+      }
+      fetchData();
     }, [])
     
     const trackRef = useRef(null)
@@ -36,14 +43,14 @@ function CardPotrait() {
 
     const handleDelete = async (id) => {
         setLoading(true);
-        await axios.delete(`${BASE_URL}/potrait/${id}`)
-        .then((response)=> {
-            setData(prev => prev.filter(item => item.id !== id))
-        }).catch((error) => {
-
-        }).finally(()=> {
-            setLoading(false);
-        })
+            try {
+                await deletePotraitApi(id);
+                dispatch(deletePotrait(id));
+                setLoading(false);
+            }catch (error) {
+                console.log(error);
+                setLoading(false);
+            }
     }
 
     return (
